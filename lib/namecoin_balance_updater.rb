@@ -1,12 +1,12 @@
-module PeercoinBalanceUpdater
-  COIN = 1000000 # ppcoin/src/util.h
+module NamecoinBalanceUpdater
+  COIN = 1000000 # namecoin/src/util.h
 
   def self.work
     Project.all.each do |project|
       start = 0
       count = 10
       loop do
-        transactions = PeercoinDaemon.instance.list_transactions(project.address_label, count, start)
+        transactions = NameDaemon.instance.list_transactions(project.address_label, count, start)
         break if transactions.empty?
 
         transactions.each do |transaction|

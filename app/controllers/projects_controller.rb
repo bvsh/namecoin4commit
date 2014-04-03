@@ -8,8 +8,8 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find params[:id]
     if @project and @project.bitcoin_address.nil? and (github_id = @project.github_id).present?
-      label = "#{github_id}@peer4commit"
-      address = PeercoinDaemon.instance.get_new_address(label)
+      label = "#{github_id}@namecoin4commit"
+      address = NamecoinDaemon.instance.get_new_address(label)
       @project.update_attributes(bitcoin_address: address, address_label: label)
     end
   end

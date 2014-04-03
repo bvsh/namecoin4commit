@@ -1,9 +1,9 @@
-class PeercoinDaemon
+class NamecoinDaemon
   def self.instance
-    @peercoin_daemon ||= PeercoinDaemon.new(CONFIG['peercoin'])
+    @namecoin_daemon ||= NamecoinDaemon.new(CONFIG['namecoin'])
   end
 
-  class RPCError < StandardError
+  class NMCError < StandardError
     attr_accessor :code
     def initialize(code, message)
       @code = code
@@ -19,7 +19,7 @@ class PeercoinDaemon
 
   def rpc(command, *params)
     %w( username password port host ).each do |field|
-      raise "No #{field} provided in peercoin config" if config[field].blank?
+      raise "No #{field} provided in namecoin config" if config[field].blank?
     end
 
     uri = URI::HTTP.build(host: config['host'], port: config['port'].to_i)
@@ -36,7 +36,7 @@ class PeercoinDaemon
 
     result = JSON.parse(response.body)
     if error = result["error"]
-      raise RPCError.new(error["code"], error["message"])
+      raise NMCError.new(error["code"], error["message"])
     end
     result["result"]
   end
