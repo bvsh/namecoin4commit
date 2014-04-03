@@ -38,8 +38,8 @@ min_payout: 1.0 # in NMC
 our_fee: 0.05
 tipper_delay: "1.hour"
 
-address_versions: # 55/117 for namecoin, 111/196 for testnet, see base58.h
-  - 111
+address_versions: # 52/196 for namecoin
+  - 52
   - 196
 
 canonical_host: namecoin4commit.example.com # will redirect all other hostnames to this one
