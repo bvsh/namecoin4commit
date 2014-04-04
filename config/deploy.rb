@@ -1,9 +1,9 @@
-set :application, 't4c'
+set :application, 'coin4commit'
 set :repo_url, 'git@github.com:bvsh/namecoin4commit.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, "/home/apps/p4c"
+set :deploy_to, "/var/www/coin4commit"
 set :scm, :git
 
 set :rvm_type, :user
