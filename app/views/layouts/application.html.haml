@@ -7,7 +7,7 @@
     %meta{content: "", name: "author"}/
     %link{href: "/favicon.png", rel: "shortcut icon"}/
     
-    %title= "Namecoin4Commit — " + (content_for?(:title) ? yield(:title) : "Contribute to Open Source")
+    %title= "coin4commit — " + (content_for?(:title) ? yield(:title) : "Contribute to Open Source")
 
     %meta{:name => 'description', :content => (content_for?(:title) ? yield(:title) : "Donate namecoins to open source projects or make commits and get tips for it.")}
     %meta{:name => 'keywords', :content => 'open source,contribute,github,community,git,bitcoin,namecoin,nmc,tips,perks'}
@@ -26,7 +26,7 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       / TODO: review
-      ga('create', 'UA-11108334-6', 'namecoin4commit.com');
+      ga('create', 'UA-11108334-6', 'coin4commit.com');
       ga('send', 'pageview');
     .container
       .masthead
@@ -40,7 +40,7 @@
               = link_to 'Sign Out', destroy_user_session_path, method: :delete
             - else
               %a{href: user_omniauth_authorize_path(:github)} Sign in
-        %h3.text-muted.code-pro Namecoin4Commit
+        %h3.text-muted.code-pro coin4commit
         = render 'common/menu'
       - if flash[:alert]
         %br
@@ -54,7 +54,7 @@
         %p
           ©
           / TODO: Change footer
-          = link_to 'Namecoin4commit', 'http://namecoin4commit.com/', target: '_blank'
+          = link_to 'coin4commit', 'http://coin4commit.com/', target: '_blank'
           2014. Source code is available at 
           =link_to('github', 'https://github.com/bvsh/namecoin4commit', target: '_blank')},
           based on #{link_to "Tip4commit", "http://tip4commit.com/"}.
