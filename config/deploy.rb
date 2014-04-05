@@ -1,5 +1,5 @@
 set :application, 'coin4commit'
-set :repo_url, 'git@github.com:bvsh/namecoin4commit.git'
+set :repo_url, 'https://github.com/bvsh/namecoin4commit.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -7,7 +7,8 @@ set :deploy_to, "/var/www/coin4commit"
 set :scm, :git
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.0.0-p247'
+# set :rvm_ruby_version, "2.1.1p76"
+# set :rvm_ruby_version, '2.0.0-p247'
 set :rvm_custom_path, '~/.rvm'
 
 set :format, :pretty
