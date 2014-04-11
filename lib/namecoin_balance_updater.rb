@@ -1,12 +1,12 @@
 module NamecoinBalanceUpdater
-  COIN = 1000000 # namecoin/src/util.h
+  COIN = 1000000 # namecoin/src/main.h:static const int64 CENT = 1000000;
 
   def self.work
     Project.all.each do |project|
       start = 0
       count = 10
       loop do
-        transactions = NameDaemon.instance.list_transactions(project.address_label, count, start)
+        transactions = NamecoinDaemon.instance.list_transactions(project.address_label, count, start)
         break if transactions.empty?
 
         transactions.each do |transaction|
